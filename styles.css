@@ -114,6 +114,14 @@ body, html {
     width: 100%;
 }
 
+.content-talleres {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    column-gap:20px;
+}
+
 .image-and-buttons-container {
     display: flex;
     width: 100%;
@@ -300,12 +308,84 @@ a:focus{
         max-width: 50%; /* Ajusta la anchura de la imagen proporcionalmente */
         margin-bottom: .5rem;
     }
+
+    .content-talleres {
+        flex-direction: column;
+    }
 }
 
 /* Anular el fondo coloreado al hacer clic en los botones */
+.consultar-btn:focus,
+.consultar-btn:active,
+.taller .consultar-btn:focus,
+.taller .consultar-btn:active,
 .btn-group-vertical .btn:focus,
 .btn-group-vertical .btn:active {
     background-color: transparent !important;
     box-shadow: none !important;
+    border: none !important;
+    outline: none;;
 }
 
+/* ///TALLERES */
+
+.taller {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taller-title {
+    color: var(--color5);
+}
+
+.taller-info {
+    padding: 15px;
+}
+
+.taller-imprint {
+    font-family: 'Garamond', serif;
+    font-style: italic;
+    color: #666;
+    margin: 5px 0;
+}
+
+.taller-text {
+    font-family: 'Garamond', serif;
+    font-size: 1em;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.consultar-btn {
+    background-color:var(--color2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Anton', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto;;
+    margin-bottom: 20px;
+}
+
+.consultar-btn:hover {
+    background-color: var(--color4);
+}
