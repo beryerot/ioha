@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Garamond&display=swap');
+
+:root {
+    --color1: #7B1E00;
+    --color2: #FB4C53;
+    --color3: #2085A8;
+    --color4: #F7B804;
+    --color5: #04B0A5;
+}
+
+body, html {
+    
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color2);
+    font-family: 'Anton', sans-serif;
+    width: 100vw;
+}
+
+/* BOTONES DE LIBROS */
+
+.book {
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+}
+
+.book:hover {
+    color: var(--color4); /* Color de fondo cuando se pasa el ratón */
+}
+
+.book-title {
+    font-weight: bold;
+    color: white;
+}
+
+.book-imprint{
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease; /* Transición de altura máxima */
+}
+
+.book-info img,
+.book-info p {
+    margin-right: 20px;
+    padding-top: 0px;
+    max-height: 400px;
+}
+
+.book-info.show {
+    max-height: 3000px; /* Altura máxima cuando está visible */
+}
+
+.book-text {
+    color: black; /* Cambiado a negro */
+    font-family: 'Garamond', serif; /* Cambiado a Garamond */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    width: 100%;
+    padding-left: 0;
+}
+
+.main-container {
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.title, .main-title {
+    color: white;
+    text-align: left;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-size: 6rem;
+    letter-spacing: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.page-title {
+    color: var(--color4);
+    text-align: left;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.image-and-buttons-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.image-and-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.btn-bar button{
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: left;
+    justify-content:flex-start;
+    align-items: start;
+    padding-right: 10px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-decoration: none; /* Evitar subrayados en el texto */
+    outline: none; /* Evitar el resaltado del botón al hacer clic */
+}
+
+a h1, a h1:hover{
+    text-decoration: none; /* Evitar subrayados en el texto */
+    outline: none; /* Evitar el resaltado del botón al hacer clic */
+    text-underline-offset: none;
+}
+
+a, a:hover{
+    text-decoration: none; /* Evitar subrayados en el texto */
+    outline: none; /* Evitar el resaltado del botón al hacer clic */
+    text-underline-offset: none;
+}
+
+.btn-bar {
+    display: flex;
+    margin-top: 0px;
+
+}
+
+@media (min-width: 768px) {
+    .image-and-buttons {
+        flex-direction: row;
+    }
+}
+
+.artist-image, .bio-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+
+
+a:focus{
+    text-decoration: none; /* Evitar subrayados en el texto */
+    outline: none; /* Evitar el resaltado del botón al hacer clic */
+    background-color: transparent;
+}
+
+.btn-custom {
+    flex: 1;
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-size: 4rem;
+    text-align: left;
+    padding: 0;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.btn-bar {
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.btn-custom:hover {
+    color: var(--color4);
+}
+
+.btn-primary, .btn-secondary, .btn-success, .btn-danger {
+    color: white;
+    border: none;
+    padding: 0;
+    line-height: 1;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-success:hover, .btn-danger:hover {
+    background-color: transparent;
+}
+
+.image-and-text-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .image-and-text-container {
+        flex-direction: row;
+    }
+
+
+}
+
+.bio-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.bio-text {
+    color: black; /* Cambiado a negro */
+    font-family: 'Garamond', serif; /* Cambiado a Garamond */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    width: 100%;
+    padding-left: 0;
+}
+
+@media (min-width: 768px) {
+    .bio-image {
+        max-width: 50%;
+    }
+
+    .bio-text {
+        padding-left: 20px;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-title, .page-title {
+        font-size: 4.2rem; /* 70% del tamaño original */
+        margin: 0; /* Añadir margen 0 para evitar que el texto salga de la pantalla */
+        padding: 0; /* Añadir padding 0 para evitar que el texto salga de la pantalla */
+    }
+
+    
+    .btn-custom {
+        font-size: 2.8rem; /* 70% del tamaño original */
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .btn-group-vertical {
+        margin-left: 0;
+    }
+
+    .book-info {
+        flex-direction: column;
+        margin-right: 0px;}
+
+        .book-info img, .book-info p{
+            margin-right: 0px;}
+
+    .book-info img{
+        max-height: none; /* Limita la altura de la imagen al 100% de la altura de la ventana */
+        max-width: 50%; /* Ajusta la anchura de la imagen proporcionalmente */
+        margin-bottom: .5rem;
+    }
+}
+
+/* Anular el fondo coloreado al hacer clic en los botones */
+.btn-group-vertical .btn:focus,
+.btn-group-vertical .btn:active {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
