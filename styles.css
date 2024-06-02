@@ -52,11 +52,11 @@ body, html {
     transition: max-height 0.2s ease; /* Transición de altura máxima */
 }
 
-.book-info img,
-.book-info p {
+.image-libros{
     margin-right: 20px;
     padding-top: 0px;
-    max-height: 400px;
+    height: 100%;
+    width: 244px;
 }
 
 .book-info.show {
@@ -300,12 +300,12 @@ a:focus{
         flex-direction: column;
         margin-right: 0px;}
 
-        .book-info img, .book-info p{
+    .book-info p{
             margin-right: 0px;}
 
-    .book-info img{
+    .image-libros{
         max-height: none; /* Limita la altura de la imagen al 100% de la altura de la ventana */
-        max-width: 50%; /* Ajusta la anchura de la imagen proporcionalmente */
+        max-width: 100%; /* Ajusta la anchura de la imagen proporcionalmente */
         margin-bottom: .5rem;
     }
 
@@ -388,4 +388,16 @@ a:focus{
 
 .consultar-btn:hover {
     background-color: var(--color4);
+}
+
+.tapas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.tapas-ediciones {
+    margin-right: 5px; /* Espacio entre las imágenes */
+    max-width: 150px; /* Ancho máximo de cada imagen */
+    margin-bottom: 5px;
 }
