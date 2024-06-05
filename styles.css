@@ -33,12 +33,10 @@ body, html {
 }
 
 .book-title {
-    font-weight: bold;
     color: white;
 }
 
 .book-imprint{
-    font-weight: bold;
     color: white;
     font-size: 1.2rem;
     margin-bottom: 5px;
