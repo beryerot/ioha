@@ -4,10 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IOSI HAVILIO - COSAS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Garamond&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Garamond&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .main-container {
+            padding: 20px;
+        }
+        .btn-bar button {
+            margin: 5px;
+        }
+        .content {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .muestra-info img.image-muestras {
+            max-width: 100%;
+            height: auto;
+            max-height: 80vh; /* Ensures the image doesn't exceed the viewport height */
+            display: block;
+            margin: 0 auto;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            width: 100%;
+        }
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+            background-color: white;
+            border: 1px solid #ddd;
+        }
+        .grid-item img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: transform 0.3s;
+            padding: 10px; /* Added padding */
+        }
+        .grid-item img:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 80vw;
+            max-height: 80vh;
+            align-items: center;
+        }
+        .caption-container {
+            text-align: center;
+            padding: 2px 16px;
+            color: white;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s;
+            user-select: none;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .curatorial-text {
+            font-family: 'Garamond', serif;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+        @media (min-width: 768px) {
+            .curatorial-text {
+                padding-top: 0; /* Remove padding-top on desktop */
+            }
+            .muestra{
+                margin-bottom: 40px;
+            }
+            .grid-container {
+            margin-top: 20px;
+        }
+        }
+    </style>
 </head>
 <body>
     <div class="main-container">
@@ -18,9 +147,116 @@
             <a href="bio.html"><button>BIO</button></a>
         </div>
         <h2 class="page-title">COSAS</h2>
-        <div>
-            <h2 style="font-size: 100px; padding: 0; text-align: left;">PRÓXIMA-<br>MENTE</h2>
+        <div class="content">
+            <div class="muestras-section">
+                <!-- Muestra 1 -->
+                <div class="muestra">
+                    <h3 class="book-title">SOBRE EL ARTE EN LA NOVELA</h3>
+                    <p>MUESTRA EN EL CENTRO CULTURAL BORGES (2023)</p>
+                    <div class="muestra-info row">
+                        <div class="col-md-6">
+                            <img src="images/muestra1.jpeg" alt="Muestra 1" class="image-muestras">
+                        </div>
+                        <div class="col-md-6 curatorial-text">
+                            <p>La literatura, la escritura, el libro, el mundo editorial, además de ser campos activos de práctica y reflexión en sus específicas materialidades, son instituciones con reglas, cánones, límites y fisonomías, aunque muchas veces precisamente los fenómenos inherentes a sus propias características son los que ponen a prueba sus fronteras y dejan en crisis sus estatutos.</p>
+                            <p>Iosi Havilio parece haber asumido apasionadamente la tarea de vulnerar, desquiciar, desestabilizar y descomponer las nomenclaturas formales y disciplinarias del territorio de trabajo que eventualmente elije, como si al hacerlo explícitamente se interrogara de manera empírica sobre la duplicidad conjetural, la inestabilidad enunciativa y perceptiva, la provisoriedad y la volatilidad, no sólo de las estructuras semánticas sino de los soportes físicos que las sostienen.</p>
+                            <p>Asumiendo estratégicamente el carácter multiforme de quien aborda indistintamente el dibujo y el color, la letra caligráfica y el texto impreso, la página como trama óptica o contaminada con los ingredientes más diversos, y hasta la herramienta de la lengua misma como metáfora y arma crítica, Havilio se emparenta, aunque de manera muy ecléctica y casi terminal, con la escolástica del llamado “libro intervenido”, categoría que en él parece quedarse corta e insuficiente. Así es como, en su militante fervor alegórico, hiere, corta, rasga, pega, embadurna, agujerea y mezcla con una sustancialidad casi culinaria en lo táctil, que se desborda en humores vaporosos e impregna el ojo con aromática visualidad. A la vez, parece haber aquí una vocación de bufonesca taumaturgia, como si un espíritu burlón se dedicara a hurgar en los intersticios de los más diversos cruces morfológicos, para probar hasta donde el lenguaje resiste la persistente amenaza de la extinción última del sentido.</p>
+                            <p>La hiperrealidad en el tratamiento de exasperado lirismo fáctico con la que Havilio extrae del cuerpo y las entrañas del “objeto libro” su feroz elocuencia poética incluye el hecho no menor de que se trata de ejemplares de libros editados de su autoría los que manipula, transforma, descompone, desmembra y desguaza, atravesando experimentalmente la homogeneidad o relatividad de cualquier noción cristalizada o intocable que se tenga de esos sustanciales monumentos civilizatorios llamados “libro” y “autor”.</p>
+                            <p><em><strong>Eduardo Stupía, noviembre 2023</strong></em></p>
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <img src="images/muestra1_img1.jpeg" alt="Muestra 1 Imagen 1" onclick="openModal(this, 'muestra1')">
+                        </div>
+                        <div class="grid-item">
+                            <img src="images/muestra1_img2.jpeg" alt="Muestra 1 Imagen 2" onclick="openModal(this, 'muestra1')">
+                        </div>
+<!--                         <div class="grid-item">
+                            <img src="images/muestra1_img3.jpeg" alt="Muestra 1 Imagen 3" onclick="openModal(this, 'muestra1')">
+                        </div>
+                        <div class="grid-item">
+                            <img src="images/muestra1_img4.jpeg" alt="Muestra 1 Imagen 4" onclick="openModal(this, 'muestra1')">
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Muestra 1 - Invertida -->
+                <div class="muestra">
+                    <div class="muestra-info row">
+                        <div class="col-md-6 curatorial-text">
+                            <p>¿Qué es una novela? ¿Una historia? ¿Una ficción? ¿Un delirio? ¿Otra realidad? ¿Una vida metida entre tapas? Papel, papel y papel. Tinta, cartón, plástico, hilo y papel. ¿Una novela es otra cosa que un sueño? ¿Una conversación al pasar? ¿La forma de un cuerpo? ¿Una caída? ¿Un cago de risa? ¿Una revolución? ¿Cualquier estupidez? Cruzar el desierto. Perderse en la ciudad. Caminar por la playa. Un amor, una enfermedad. La muerte. ¿Qué no sería una novela después de todo?</p>
+                            <p>Una novela, leí por ahí, debe ser al mismo tiempo algo memorable, entretenido y novedoso. Que se recuerda. Que divierte. Que se muestra distinta y nueva cada vez. ¿Algo así, no? De tanto escribir, mirar, anotar, garabatear y dibujar, de tanto decir y de escuchar, de ciertas leyes absurdas y de una larga, larga, larguísima, vieja y joven frustración, surge esta aventura. Una serie de intervenciones/destrucciones/renacimientos de libros-novelas que publiqué aquí y allá, junto a editoriales medianas, chicas y grandes, en la última quincena de años. Haciendo y deshaciendo, jugando y destrozando, y un poco preguntándome sobre el origen de las cosas, sobre el sentido de las cosas, sobre lo que las cosas pueden ser más allá de lo que en apariencia son. En esta sala hay tramas y personajes de las especies más variadas. Hay libros en español, en hebrero, en serbocroata, en inglés, deshojados, reescritos, transfigurados, manchados con tinta, con betún, pintados con acuarelas, al huevo, hay libros hachados, aerosoleados, cortados con cutter, con tijeras, libros prendidos fuego, encolados, coloreados con lápices, espolvoreados de grafito, libros tapados de ajos y cebollas, perforados con clavos y estacas, iluminados con redes, embadurnados con carbón y arcilla, libros resaltados, hervidos, acribillados, libros, libros y más libros. Algunos incluso pasados por la máquina de lavar, por litros de agua, suavizante y jabón. Y todo para qué. Porque sí, para nada.</p>
+                            <p>Sobre el arte de la novela es, antes, el título de una poderosa novela de Fogwill que arranca hablando de las viejas madres. No pasa un día sin que se piense en ellas por un instante, todos, o casi todos los hombres, dice. Las viejas madres, como relámpagos de oscuridad, relámpagos oblicuos, surcándonos las caras. Y más adelante, en ese mismo párrafo inicial: “El arte de la novela, que parece complejo, visto desde lejos, resulta de una sencilla combinatoria. Está la historia, están la silla y la mesita de novelar, y sobreviene la intención de combinar algunas citas bajo palabreriles velos.” De eso se trata esta muestra: de esa intención, de esa urgencia, de algunas otras combinaciones posibles, de palabras, más allá de las palabras, y, también, y sobre todo, de las viejas madres. Cómo que no. ¿Y entonces qué? Miro, escribo, leo, escucho y me pregunto, me sigo preguntando: ¿Qué mierda es una novela después de todo? ¿Eh?</p>
+                            <p><em><strong>Iosi Havilio, noviembre 2023</strong></em></p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <img src="images/muestra2.jpg" alt="Muestra 2" class="image-muestras" style="margin-bottom: 20px; max-height: none;">
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <img src="images/muestra1_img6.jpg" alt="Muestra 1 Imagen 5" onclick="openModal(this, 'muestra1')">
+                        </div>
+                        <div class="grid-item">
+                            <img src="images/muestra1_img7.jpeg" alt="Muestra 1 Imagen 6" onclick="openModal(this, 'muestra1')">
+                        </div>
+                        <div class="grid-item">
+                            <img src="images/muestra1_img8.jpeg" alt="Muestra 1 Imagen 7" onclick="openModal(this, 'muestra1')">
+                        </div>
+                        <!-- <div class="grid-item">
+                            <img src="images/muestra1_img5.jpeg" alt="Muestra 1 Imagen 8" onclick="openModal(this, 'muestra1')">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let modal = document.getElementById("myModal");
+        let modalImg = document.getElementById("modal-img");
+        let captionText = document.getElementById("caption");
+        let currentImages = [];
+        let currentMuestra = '';
+        let slideIndex = 0;
+
+        function openModal(imgElement, muestra) {
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+
+            currentMuestra = muestra;
+            currentImages = Array.from(document.querySelectorAll(`.grid-container img[onclick*="${muestra}"]`));
+            slideIndex = currentImages.indexOf(imgElement);
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= currentImages.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = currentImages.length - 1;
+            }
+            modalImg.src = currentImages[slideIndex].src;
+            captionText.innerHTML = currentImages[slideIndex].alt;
+        }
+    </script>
 </body>
 </html>

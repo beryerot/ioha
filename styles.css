@@ -92,6 +92,11 @@ body, html {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+
+}
+
+.main-title h1{
+    line-height: 1;
 }
 
 .page-title {
@@ -149,6 +154,7 @@ body, html {
     padding-bottom: 0px;
     text-decoration: none; /* Evitar subrayados en el texto */
     outline: none; /* Evitar el resaltado del botón al hacer clic */
+
 }
 
 a h1, a h1:hover{
@@ -166,6 +172,8 @@ a, a:hover{
 .btn-bar {
     display: flex;
     margin-top: 0px;
+    line-height: 1;
+    margin-bottom: 20px;
 
 }
 
@@ -400,4 +408,32 @@ a:focus{
     margin-right: 5px; /* Espacio entre las imágenes */
     max-width: 150px; /* Ancho máximo de cada imagen */
     margin-bottom: 5px;
+}
+
+/* app */
+
+canvas {
+    border: 1px solid #000;
+}
+
+.send-button{text-align: center;
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    font-size: 16px;
+    border: 1px solid #000; /* Borde negro */
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#button-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Agrega un estilo específico para cuando el botón tiene el texto "Dibujo enviado" */
+.send-button.sent {
+    border: none; /* Quita el borde */
+    cursor: default; /* Desactiva el cursor */
 }
