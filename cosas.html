@@ -136,9 +136,26 @@
             margin-top: 20px;
         }
         }
+
+        @media (max-width: 400px) {
+            .main-container {
+                padding: 10px;
+            }
+            .curatorial-text {
+                padding: 10px;
+                font-size: 1rem;
+            }
+            .grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 5px;
+            }
+            .grid-item img {
+                padding: 5px;
+            }
+        }
     </style>
 </head>
-<body>
+<body class="cosas-page">
     <div class="main-container">
         <a href="index.html"><h1 class="main-title">IOSI HAVILIO</h1></a>
         <div class="btn-bar">
@@ -155,7 +172,7 @@
                     <p>MUESTRA EN EL CENTRO CULTURAL BORGES (2023)</p>
                     <div class="muestra-info row">
                         <div class="col-md-6">
-                            <img src="images/muestra1.jpeg" alt="Muestra 1" class="image-muestras">
+                            <img src="images/muestra1.jpeg" alt="Muestra 1" class="image-muestras img-fluid">
                         </div>
                         <div class="col-md-6 curatorial-text">
                             <p>La literatura, la escritura, el libro, el mundo editorial, además de ser campos activos de práctica y reflexión en sus específicas materialidades, son instituciones con reglas, cánones, límites y fisonomías, aunque muchas veces precisamente los fenómenos inherentes a sus propias características son los que ponen a prueba sus fronteras y dejan en crisis sus estatutos.</p>
@@ -258,5 +275,5 @@
             captionText.innerHTML = currentImages[slideIndex].alt;
         }
     </script>
-</body>
+</body> 
 </html>
