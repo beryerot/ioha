@@ -319,6 +319,10 @@ a:focus{
         padding: 0; /* Añadir padding 0 para evitar que el texto salga de la pantalla */
     }
 
+    .main-container {
+
+        padding: 5px;
+    }
     
     .btn-custom {
         font-size: 2.8rem; /* 70% del tamaño original */
