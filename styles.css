@@ -476,3 +476,14 @@ canvas {
     min-height: 100vh; /* Asegura que el fondo cubra toda la altura de la página */
     box-sizing: border-box;
 }
+
+@media (max-width: 640px){
+    .lang-switch{
+      position: fixed !important;
+      bottom: 12px !important;
+      top: auto !important;
+      right: 12px !important;
+      left: auto !important;
+    }
+
+  }
